@@ -1,0 +1,34 @@
+type Query{
+    getBookById(id: ID): BookResponse
+    getBooks: [BookResponse]
+}
+
+type Mutation {
+    addBook(request: BookRequest): BookResponse
+    updateBook(request: Book): BookResponse
+    deleteBook(id: ID): String
+}
+
+
+input BookRequest {
+    title: String,
+    pageCount: Int
+}
+
+input Book {
+    id: Int
+    title: String
+    pageCount: Int
+}
+
+type BookResponse {
+    id: ID
+    title: String
+    pageCount: Int
+}
+
+type Author {
+    id: ID
+    firstName: String
+    lastName: String
+}
